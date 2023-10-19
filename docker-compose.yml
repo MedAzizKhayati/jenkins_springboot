@@ -1,0 +1,18 @@
+version: "3"
+name: spring-mongo
+services:
+  mongodb:
+    image: mongo:4.4.21
+    container_name: "mongodb"
+    ports:
+      - "27017:27017"
+  springboot-app:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: springboot-app
+    container_name: springboot-app
+    ports:
+      - "8081:8081"
+    depends_on:
+        - mongodb
