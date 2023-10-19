@@ -7,13 +7,6 @@ pipeline {
     }
 
     stages {
-        stage("Checkout SCM"){
-            steps{
-                // Get some code from a GitHub repository
-                git 'https://github.com/MedAzizKhayati/jenkins_springboot'
-
-            }
-        }
 
         stage('Build') {
             steps {
